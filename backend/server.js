@@ -10,7 +10,11 @@ const { Pool } = pkg;
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://your-vercel-url.vercel.app'],
+  methods: ['POST'],
+  credentials: false
+}));
 app.use(express.json());
 
 const pool = new Pool({
