@@ -10,7 +10,7 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://sentiment-analysis-app-1-417l.onrender.com', { movie, review });
+      const response = await axios.post('http://localhost:5000/api/analyze', { movie, review });
       setResult({ ...response.data, movie });
     } catch (err) {
       console.error(err);
