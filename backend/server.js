@@ -10,11 +10,7 @@ const { Pool } = pkg;
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors({
-  origin: ['https://sentiment-analysis-app-git-main-sidharth-aggarwals-projects.vercel.app/?_vercel_share=WIg2WxQhaVuKuvwc870C5QA615lSMujJ'],
-  methods: ['POST'],
-  credentials: false
-}));
+app.use(cors());
 app.use(express.json());
 
 const pool = new Pool({
